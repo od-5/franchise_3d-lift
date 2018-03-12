@@ -1,0 +1,7 @@
+django==1.11
+django-annoying
+pillow
+pytils
+django-extra-views
+django-suit==0.2.26
+

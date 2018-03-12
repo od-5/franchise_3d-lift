@@ -1,0 +1,6 @@
+<form action="{% url 'ticket:send' %}" class="ticket-form ticket-form_modal js-main-ticket-form" method="post">{% csrf_token %}
+    {{ form.name }}
+    {{ form.phone }}
+    {{ form.email }}
+    <input type="submit" value="Отправить" class="button">
+</form>

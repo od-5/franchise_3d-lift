@@ -1,0 +1,11 @@
+.idea/
+/cms/local_settings.py
+*.pyc
+/apps/landing/migrations
+db.sqlite3
+venv
+Dockerfile
+docker-compose.yml
+*.sublime*
+/apps/ticket/migrations/
+/apps/download/migrations/
