@@ -1,4 +1,4 @@
-<form action="{% url 'ticket:send' %}" class="ticket-form ticket-form_modal js-main-ticket-form" method="post">{% csrf_token %}
+<form action="{% url 'ticket:send' %}" class="ticket-form ticket-form_modal js-main-ticket-form text-center" method="post">{% csrf_token %}
     {{ form.name }}
     {{ form.phone }}
     {{ form.email }}

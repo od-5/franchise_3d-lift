@@ -33,3 +33,14 @@ class LandingView(TemplateView):
             'setup': Setup.objects.first()
         })
         return context
+
+
+class OkView(TemplateView):
+    template_name = 'ok.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(OkView, self).get_context_data(**kwargs)
+        context.update({
+            'setup': Setup.objects.first()
+        })
+        return context

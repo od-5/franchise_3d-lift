@@ -181,7 +181,21 @@ $(function() {
       });
     }
   });
-
+  // Модальная форма отправки заявки из калькулятора
+  $(".js-modal-calc-form").validate({
+    rules: {
+      name: {
+        required: true
+      },
+      phone: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      }
+    }
+  });
   // Форма отправки заявки с главной страницы
   $( ".js-main-ticket-form" ).validate({
     rules: {

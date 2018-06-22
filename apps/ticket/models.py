@@ -30,7 +30,7 @@ class Ticket(Created):
     phone = models.CharField(verbose_name=u'Телефон', max_length=256)
     email = models.EmailField(verbose_name=u'e-mail', max_length=60, )
     status = models.PositiveSmallIntegerField(verbose_name=u'Статус заявки',  choices=TICKET_STATUS_CHOICE,
-                                              default=0, blank=True, null=True)
+                                              default=1, blank=True, null=True)
 
     def send_notify_mail(self):
         email = False

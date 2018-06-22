@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block top_js %}
+	<script type="text/javascript">
+		setTimeout('location.replace("{% url 'website:index' %}")', 3000);
+	</script>
+  <style>
+  html, body, .franchise-first {
+    height: 100%;
+  }
+  .parent {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0;
+  }
+  .parent:before {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+    }
+
+
+  .block {
+      display: inline-block;
+      white-space: normal;
+      vertical-align: middle;
+      text-align: left;
+  }
+  </style>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block content %}
+  <section class="franchise-first">
+    <div class="parent">
+      <div class="block">
+        <div class="container_12">
+          <div class="franchise-first-container">
+            <div class="grid_7">
+              <h2 class="franchise__title franchise__title_blue">ВАША ЗАЯВКА ПРИНЯТА!</h2>
+              <h2 class="franchise__title">в течение суток мы пришлём вам индивидуальное предложение</h2>
+            </div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

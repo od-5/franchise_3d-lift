@@ -2049,6 +2049,13 @@ a,
 #bp-modal-download p {
   color: #fff;
 }
+#modal-form {
+  display: none;
+}
+#modal-form p {
+  color: #fff;
+  text-transform: uppercase;
+}
 .input,
 .button {
   height: 50px;
@@ -2065,6 +2072,9 @@ a,
   .button {
     min-width: 90%;
   }
+}
+label.error {
+  color: red;
 }
 .button {
   color: #fff;
@@ -2131,6 +2141,9 @@ a.button {
   padding: 10px 0;
   text-align: right;
 }
+.franchise-calc .calc-line input {
+  max-width: 160px;
+}
 .franchise-calc .calc-line label {
   color: #333;
   font-size: 16px;
@@ -2138,6 +2151,8 @@ a.button {
 @media only screen and (max-width: 480px) {
   .franchise-calc .calc-line label {
     font-size: 12px;
+    display: block;
+    height: 30px;
   }
 }
 .franchise-calc .calc-line input {

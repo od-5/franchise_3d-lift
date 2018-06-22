@@ -28,6 +28,7 @@
   {{ setup.top_js|safe|default:'' }}
 </head>
 <body>
+{% block header %}
   <header class="header">
     <a name="top"></a>
     <div class="header-top">
@@ -83,7 +84,7 @@
         <div class="clearfix"></div>
           <div class="franchise-calc">
             <div class="grid_6 calc-line">
-                <label for="lift_count">Введите количество лифтов</label> <input type="number" value="10" name="lift_count" id="lift_count">
+                <label for="lift_count">Введите количество лифтов городе</label> <input type="number" value="10" name="lift_count" id="lift_count">
             </div>
             <div class="grid_6 calc-line">
                 <label for="dohod">Ваш доход</label> <input type="number" name="dohod" value="50000" id="dohod" readonly>
@@ -98,15 +99,15 @@
                 <label for="vznos">Паушальный взнос</label> <input type="number" value="0" name="vznos" id="vznos" readonly>
             </div>
             <div class="grid_12 text-center">
-                <button class="button">Рассчитать</button>
+                <a href="#modal-form" class="button js-main-ticket-button">Рассчитать</a>
             </div>
             <div class="clearfix"></div>
           </div>
       </div>
     </div>
   </header>
-
-
+{% endblock %}
+{% block content %}
 
   <section class="franchise-first">
     <div class="container_12">
@@ -339,9 +340,25 @@
       <div class="clearfix"></div>
     </div>
   </section>
+{% endblock %}
 
-
-
+<div id="modal-form">
+  <p class="text-center">оставьте ваш емейл и мы <br> пришлём вам все возможные варианты франшиз</p>
+  <form action="{% url 'ticket:calc' %}" method="post" class="modal-form js-modal-calc-form text-center">{% csrf_token %}
+    <div>
+      <input type="text" name="name" id="id_name" class="input" placeholder="Ваше имя">
+    </div>
+    <div>
+      <input type="text" name="phone" id="id_phone" class="input" placeholder="Ваш номер телефона">
+    </div>
+    <div>
+      <input type="email" name="email" id="id_email" class="input" placeholder="Ваш e-mail">
+    </div>
+    <div>
+      <input type="submit" value="Отправить" class="button">
+    </div>
+  </form>
+</div>
 <div id="bp-modal-download">
   <p class="text-center">Чтобы скачать Бизнес-План<br> оставьте ваш email и телефон </p>
   <form action="{% url 'download:send' %}" id="js-form-bp-download" method="post" class="bp-download-form text-center">
