@@ -345,7 +345,7 @@
 <div id="modal-form">
 {#  <p class="text-center">оставьте ваш емейл и мы <br> пришлём вам все возможные варианты франшиз</p>#}
   <p class="text-center">
-    Ваш потенциальный доход - <span id="js-dohod-val"></span> <span>р/мес.</span> <br>
+    Ваш потенциальный доход - <span id="js-dohod-val"></span> <span>р/мес.</span> <br><br>
     Для более точного расчёта и формирования <br>
     индивидуального предложения оставьте заявку</p>
   <form action="{% url 'ticket:calc' %}" method="post" class="modal-form js-modal-calc-form text-center">{% csrf_token %}
