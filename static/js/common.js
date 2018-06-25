@@ -12,6 +12,9 @@ $(function() {
   //    $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
   //    return false;
   //});
+  function number_format( str ){
+     return str.replace(/(\s)+/g, '').replace(/(\d{1,3})(?=(?:\d{3})+$)/g, '$1 ');
+  }
   $('.js-select-city').click(function(){
     $('.header-city-select__list').slideToggle();
   });
@@ -60,9 +63,11 @@ $(function() {
       // } else {
       //   price.val(50000);
       // }
-      dohod.val(lift_val * ammount);
+      var dohod_val = lift_val * ammount;
+      dohod.val(dohod_val);
       price.val((lift_val * ammount)/2);
-      $('#js-dohod-val').text(lift_val * ammount);
+
+      $('#js-dohod-val').text(number_format(dohod_val.toString()));
     }
   });
   $('.js-city-ticket-button').fancybox({
