@@ -62,7 +62,7 @@
                 <span class="red">Яркий</span> бизнес<br> на рекламе <br> в лифтах новостроек!
             </h1>
             <p class="header__desc text-center">
-              Зарабатывай от 50000р с одного жилого комплекса
+              Зарабатывай от <strong>50000р</strong> с одного жилого комплекса
             </p>
             <p class="header__desc_title text-center">
               Увеличь доход<br> на примере компании <br> "АРТ-ЛИФТ"
@@ -345,7 +345,7 @@
 <div id="modal-form">
 {#  <p class="text-center">оставьте ваш емейл и мы <br> пришлём вам все возможные варианты франшиз</p>#}
   <p class="text-center">
-    Ваш потенциальный доход - <span id="js-dohod-val"></span> <span>р/мес.</span> <br><br>
+    Ваш потенциальный доход - <span id="js-dohod-val"></span> <span>руб.</span> <br><br>
     Для более точного расчёта и формирования <br>
     индивидуального предложения оставьте заявку</p>
   <form action="{% url 'ticket:calc' %}" method="post" class="modal-form js-modal-calc-form text-center">{% csrf_token %}
