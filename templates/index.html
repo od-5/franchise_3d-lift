@@ -84,13 +84,13 @@
         <div class="clearfix"></div>
           <div class="franchise-calc">
             <div class="grid_6 calc-line">
-                <label for="lift_count">Введите количество лифтов городе</label> <input type="number" value="10" name="lift_count" id="lift_count">
+                <label for="lift_count">Введите количество лифтов городе</label> <input type="number" value="1000" name="lift_count" id="lift_count">
             </div>
             <div class="grid_6 calc-line">
-                <label for="dohod">Ваш доход</label> <input type="number" name="dohod" value="50000" id="dohod" readonly>
+                <label for="dohod">Ваш доход</label> <input type="number" name="dohod" value="5000000" id="dohod" readonly>
             </div>
             <div class="grid_12 calc-line">
-                <label for="price">Стоимость франшизы</label> <input type="number" name="price" value="25000" id="price" readonly>
+                <label for="price">Стоимость франшизы</label> <input type="number" name="price" value="150000" id="price" readonly>
             </div>
             <div class="grid_6 calc-line">
                 <label for="investition">Первоначальные инвестиции</label> <input type="number" value="0" name="investition" id="investition" readonly>
@@ -343,7 +343,11 @@
 {% endblock %}
 
 <div id="modal-form">
-  <p class="text-center">оставьте ваш емейл и мы <br> пришлём вам все возможные варианты франшиз</p>
+{#  <p class="text-center">оставьте ваш емейл и мы <br> пришлём вам все возможные варианты франшиз</p>#}
+  <p class="text-center">
+    Ваш потенциальный доход - <span id="js-dohod-val"></span> <span>р/мес.</span> <br>
+    Для более точного расчёта и формирования <br>
+    индивидуального предложения оставьте заявку</p>
   <form action="{% url 'ticket:calc' %}" method="post" class="modal-form js-modal-calc-form text-center">{% csrf_token %}
     <div>
       <input type="text" name="name" id="id_name" class="input" placeholder="Ваше имя">

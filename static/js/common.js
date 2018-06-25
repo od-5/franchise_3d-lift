@@ -45,6 +45,24 @@ $(function() {
     },
     afterClose: function (e) {
       $('.js-main-ticket-form_modal').trigger('reset');
+    },
+    beforeLoad: function (e) {
+      var calculator = $('.franchise-calc');
+      var ammount = 5000;
+      // var lift_add;
+      var lift = calculator.find('#lift_count');
+      var price = calculator.find('#price');
+      var dohod = calculator.find('#dohod');
+      var lift_val = lift.val();
+      // if (lift_val > 10) {
+      //   lift_add = lift_val - 10;
+      //   price.val(50000 + lift_add*2500);
+      // } else {
+      //   price.val(50000);
+      // }
+      dohod.val(lift_val * ammount);
+      price.val((lift_val * ammount)/2);
+      $('#js-dohod-val').text(lift_val * ammount);
     }
   });
   $('.js-city-ticket-button').fancybox({
@@ -295,25 +313,6 @@ $(function() {
     itemWidth: 610,
     itemMargin: 3
   });
-
-  var calculator = $('.franchise-calc');
-  calculator.find('button').click(function(){
-    var ammount = 5000;
-    // var lift_add;
-    var lift = calculator.find('#lift_count');
-    var price = calculator.find('#price');
-    var dohod = calculator.find('#dohod');
-    var lift_val = lift.val();
-    // if (lift_val > 10) {
-    //   lift_add = lift_val - 10;
-    //   price.val(50000 + lift_add*2500);
-    // } else {
-    //   price.val(50000);
-    // }
-    dohod.val(lift_val * ammount);
-    price.val((lift_val * ammount)/2);
-  });
-
 
   var max_col_height = 0; // максимальная высота, первоначально 0
   if (document.body.offsetWidth > 480) {

@@ -2056,6 +2056,10 @@ a,
   color: #fff;
   text-transform: uppercase;
 }
+#modal-form span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
 .input,
 .button {
   height: 50px;
